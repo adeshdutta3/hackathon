@@ -58,10 +58,11 @@ def general_query_chain(query: str) -> str:
         res = query_db(query)   # returns a dict
         result = res["answer"]
         confidence = res["confidence"]
+        print(res)
 
-        if confidence > 0.98:
+        if confidence > 0.7:
             return result
-        elif confidence > 0.90:
+        elif confidence > 0.6:
             # USE GPT tiny to rephrase with uncertainty
             return gpt_tiny_response(query, result)
         else:
