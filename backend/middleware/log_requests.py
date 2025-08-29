@@ -2,7 +2,6 @@ import time
 from backend.logging_setup import logger
 from fastapi import Request
 
-
 async def log_requests(request: Request, call_next):
     start_time = time.time()
 
@@ -14,7 +13,7 @@ async def log_requests(request: Request, call_next):
         body_text = "<Could not read body>"
 
     logger.info(
-        f"⬅️ Incoming Request | {request.method} {request.url.path} | "
+        f"[IN] {request.method} {request.url.path} | "
         f"Query: {request.url.query or 'None'} | Body: {body_text}"
     )
 
@@ -23,7 +22,7 @@ async def log_requests(request: Request, call_next):
 
     process_time = (time.time() - start_time) * 1000
     logger.info(
-        f"➡️ Outgoing Response | {request.method} {request.url.path} | "
+        f"[OUT] {request.method} {request.url.path} | "
         f"Status: {response.status_code} | Time: {process_time:.2f}ms"
     )
 

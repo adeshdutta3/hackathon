@@ -3,6 +3,14 @@ import logging
 import os
 from logging.handlers import TimedRotatingFileHandler
 
+import sys
+
+# Force UTF-8 output on Windows console
+if sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 log_dir = os.path.join(BASE_DIR, '..', 'logs')
 os.makedirs(log_dir, exist_ok=True)

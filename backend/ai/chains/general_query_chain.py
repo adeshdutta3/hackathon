@@ -1,10 +1,11 @@
 from backend.utils.db_query import query_db
 from backend.logging_setup import logger
 from backend.utils.model_selector import tiny_model, mini_model
+from langsmith import traceable
 
 
 
-
+@traceable(name="Tiny Model Response")
 def gpt_tiny_response(query: str, context: str) -> str:
     """Generate rephrased response using the tiny model."""
     model = tiny_model()
@@ -29,6 +30,7 @@ def gpt_tiny_response(query: str, context: str) -> str:
         return "I can only answer DeFi-related questions."
 
 
+@traceable(name="Mini Model Response")
 def gpt_mini_response(query: str) -> str:
     """Placeholder for GPT mini response generation."""
     model = mini_model()

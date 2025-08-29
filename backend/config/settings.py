@@ -1,30 +1,24 @@
 from pydantic_settings import BaseSettings
 from typing import Optional, List
 from dotenv import load_dotenv
+load_dotenv(dotenv_path="backend/.env")
 
-load_dotenv()
 
 class LangChainSettings(BaseSettings):
     LANGSMITH_API_KEY: Optional[str] = None
     LANGCHAIN_TRACING_V2: bool = False
-    LANGCHAIN_PROJECT: str = "DeFi AI Assistant"
+    LANGCHAIN_PROJECT: str = "Some Shit App"
 
     class Config:
         env_file = ".env"
 
 
 class OpenAISettings(BaseSettings):
-    OPENAI_API_KEY: Optional[str] = None
+    _API_KEYOPENAI: Optional[str] = None
     class Config:
         env_file = ".env"
 
 
-class PineconeSettings(BaseSettings):
-    PINECONE_API_KEY: str
-    PINECONE_INDEX: str
-
-    class Config:
-        env_file = ".env"
 
 class ModelSettings(BaseSettings):
     DEFAULT_MODEL: str = "gpt-5-mini"
@@ -74,26 +68,14 @@ class ChatBot(BaseSettings):
     class Config:
         env_file = ".env"
 
-class CDPSettings(BaseSettings):
-    CDP_API_KEY_ID: str
-    CDP_API_KEY_SECRET: str
-    CDP_WALLET_SECRET: str
-    CDP_NETWORK_ID: str = "base-sepolia"
-    CDP_PAYMASTER_URL: str
-    class Config:
-        env_file = ".env"
-
 
 
 
 # Instantiate
 openai_settings = OpenAISettings()
-pinecone_settings = PineconeSettings()
-redis_settings = RedisSettings()
 model_settings = ModelSettings()
 security_settings = SecuritySettings()
 vector_settings = VectorSettings()
 session_settings = SessionSettings()
 chatbot_settings = ChatBot()
 langchain_settings = LangChainSettings()
-cdp_settings = CDPSettings()

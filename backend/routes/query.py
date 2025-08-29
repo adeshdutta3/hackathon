@@ -19,7 +19,7 @@ limiter = Limiter(key_func=get_remote_address)
 
 @router.post("/", response_model=QueryResponse)
 @limiter.limit(f"{security_settings.RATE_LIMIT_PER_MINUTE}/minute")
-async def handle_query(   # 🔹 changed to async
+async def handle_query(
     request: Request,
     user_input: UserQuery,
     response: Response,
