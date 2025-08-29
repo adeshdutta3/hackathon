@@ -1,0 +1,22 @@
+fastapi
+slowapi
+
+
+#Configuring Environment Vars
+dotenv
+
+
+#Langchain Setup
+langchain
+langchain-core
+langsmith
+langchain-openai
+langchain-ollama
+langchain-community
+
+
+#Embedding Model
+sentence-transformers
+faiss-cpu
+
+

@@ -1,0 +1,600 @@
+[
+  {
+    "id": "q0001",
+    "text": "How do I send crypto from Coinbase?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "coinbase_transaction",
+      "response": "To send crypto on Coinbase, go to the trading or funding section, select the currency, choose send, enter recipient address and amount, then confirm the on-chain transaction.",
+      "source": "Coinbase send steps"
+    }
+  },
+  {
+    "id": "q0002",
+    "text": "Why hasn’t my crypto been received?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "coinbase_transaction",
+      "response": "If the recipient hasn’t received your crypto, check the transaction status in your Coinbase activity or blockchain explorer to ensure confirmation.",
+      "source": "Coinbase troubleshooting send/receive"
+    }
+  },
+  {
+    "id": "q0003",
+    "text": "What is Binance Wallet?",
+    "metadata": {
+      "intent": "education",
+      "category": "binance_wallet",
+      "response": "Binance Wallet is a self-custody wallet integrated in the Binance app using MPC tech, enabling secure token swaps, yield, and dApp access.",
+      "source": "Binance Wallet FAQ"
+    }
+  },
+  {
+    "id": "q0004",
+    "text": "How do I send and receive tokens using Binance Wallet?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "binance_wallet",
+      "response": "Tap Send, choose asset and recipient address, enter amount, and confirm. For receiving, tap Receive, select via address or Binance Exchange, and share the QR code or address.",
+      "source": "Binance Wallet FAQ"
+    }
+  },
+  {
+    "id": "q0005",
+    "text": "Why is my transaction pending on Binance Wallet?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "binance_wallet",
+      "response": "Pending due to low gas fee. Use the speed-up function or increase fee to try early confirmation.",
+      "source": "Binance Wallet FAQ"
+    }
+  },
+  {
+    "id": "q0006",
+    "text": "What is the Binance BTC transaction accelerator?",
+    "metadata": {
+      "intent": "service",
+      "category": "binance_transaction",
+      "response": "A service to speed up BTC confirmations when networks are congested or fees are low; it prioritizes you with miners.",
+      "source": "Binance BTC transaction accelerator FAQ"
+    }
+  },
+  {
+    "id": "q0007",
+    "text": "Why does a crypto transaction take so long to confirm?",
+    "metadata": {
+      "intent": "education",
+      "category": "binance_transaction",
+      "response": "Confirmation time depends on network congestion and the fee you've attached; low fees or busy networks delay it.",
+      "source": "Binance BTC transaction accelerator FAQ"
+    }
+  },
+  {
+    "id": "q0008",
+    "text": "Where can I find my transaction ID (TxID)?",
+    "metadata": {
+      "intent": "education",
+      "category": "binance_transaction",
+      "response": "Find TxID in your wallet or exchange under transaction history; it’s a unique hash you can use to track the transaction on a blockchain explorer.",
+      "source": "Binance support FAQ"
+    }
+  },
+  {
+    "id": "q0009",
+    "text": "How does Binance Convert Recurring work?",
+    "metadata": {
+      "intent": "service",
+      "category": "binance_convert",
+      "response": "Binance Convert Recurring automates crypto purchases at regular intervals (hourly, daily, weekly, etc.) with zero fees using DCA strategy.",
+      "source": "Binance Convert Recurring FAQ"
+    }
+  },
+  {
+    "id": "q0010",
+    "text": "What happens if I don’t have enough balance for my recurring plan?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "binance_convert",
+      "response": "If balance’s insufficient, the purchase fails; it will retry next cycle. If it fails continuously for 6 months, the plan is canceled.",
+      "source": "Binance Convert Recurring FAQ"
+    }
+  },
+  {
+    "id": "q0011",
+    "text": "How many recurring plans can I have on Binance Convert?",
+    "metadata": {
+      "intent": "education",
+      "category": "binance_convert",
+      "response": "You can subscribe to up to 20 recurring plans, including paused ones.",
+      "source": "Binance Convert Recurring FAQ"
+    }
+  },
+  {
+    "id": "q0012",
+    "text": "What are maker and taker fees on exchanges?",
+    "metadata": {
+      "intent": "education",
+      "category": "fees",
+      "response": "Makers add liquidity and pay lower fees; takers remove it and pay more. Fees vary based on trading volume tiers.",
+      "source": "Investopedia exchange fees"
+    }
+  },
+  
+  {
+    "id": "q0013",
+    "text": "How do I send crypto from Coinbase?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "coinbase_transaction",
+      "response": "On-chain send: go to Send/Receive, pick the cryptocurrency and on-chain option, enter recipient address and amount, then confirm.",
+      "source": "Coinbase steps to send crypto"
+    }
+  },
+  {
+    "id": "q0014",
+    "text": "Why hasn’t my crypto been received by the recipient?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "coinbase_transaction",
+      "response": "Check the transaction status in your Coinbase activity or via a blockchain explorer to ensure it’s confirmed.",
+      "source": "Coinbase send and receive troubleshooting"
+    }
+  },
+  {
+    "id": "q0015",
+    "text": "What is my available balance on Coinbase?",
+    "metadata": {
+      "intent": "education",
+      "category": "coinbase_balance",
+      "response": "Your available balance is the amount you can send or cash out, which is total account value minus any funds on hold.",
+      "source": "Coinbase available balance FAQ"
+    }
+  },
+  {
+    "id": "q0016",
+    "text": "What is a destination tag or memo for Coinbase?",
+    "metadata": {
+      "intent": "education",
+      "category": "coinbase_transaction",
+      "response": "Certain cryptocurrencies require a Memo or Destination Tag—make sure to include it when sending or receiving to avoid loss of funds.",
+      "source": "Coinbase destination tag memo FAQ"
+    }
+  },
+  {
+    "id": "q0017",
+    "text": "How do I deposit cryptocurrency on Binance?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "binance_deposit",
+      "response": "Go to Deposit > Deposit Crypto, choose currency and network, copy the address or QR code, then send from your external wallet (ensure networks match).",
+      "source": "Binance deposit crypto FAQ"
+    }
+  },
+  {
+    "id": "q0018",
+    "text": "Why hasn't my deposit been credited on Binance?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "binance_deposit",
+      "response": "Check the blockchain explorer with your TxID. Deposits may be delayed by network congestion or missing memo/tag. Binance articles detail recovery steps.",
+      "source": "Binance deposit/withdrawal FAQ"
+    }
+  },
+  {
+    "id": "q0019",
+    "text": "How do I withdraw crypto using Bitcoin Lightning Network on Binance?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "binance_withdraw_lightning",
+      "response": "Select BTC and Lightning as network, paste the deposit invoice from the originating platform, enter matching amount, confirm with 2FA. Invoice expires in 30 minutes.",
+      "source": "Binance Bitcoin Lightning withdrawal FAQ"
+    }
+  },
+  {
+    "id": "q0020",
+    "text": "What is a liquidity pool?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquidity_pool",
+      "response": "A liquidity pool is a smart-contract-locked collection of crypto (usually two tokens) used to enable trading on decentralized exchanges without order books.",
+      "source": "Gemini liquidity pool definition"
+    }
+  },
+  {
+    "id": "q0021",
+    "text": "How do liquidity pools work and how do providers earn?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquidity_pool",
+      "response": "Providers deposit equal value tokens into a pool. An AMM sets prices using the constant product formula (x * y = k). Providers earn a share of trading fees and may receive LP tokens as proof of share.",
+      "source": "Hacken liquidity pools mechanics"
+    }
+  },
+  {
+    "id": "q0022",
+    "text": "What are the risks of liquidity pools?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquidity_pool",
+      "response": "Risks include impermanent loss, smart-contract vulnerabilities, and slippage, especially in low-liquidity pools.",
+      "source": "TastyCrypto liquidity pools pros and cons"
+    }
+  },
+{
+    "id": "q0023",
+    "text": "How can I deposit crypto into my CoinDCX account?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "coindcx_deposit",
+      "response": "Log in, go to Funds → Deposit, choose crypto, copy wallet address or scan QR, pick correct network, send from external source.",
+      "source": "CoinDCX crypto deposit FAQ"
+    }
+  },
+  {
+    "id": "q0024",
+    "text": "How do I withdraw crypto from CoinDCX?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "coindcx_withdraw",
+      "response": "In app, go to Account → Crypto Transactions → Withdraw. Pick token, enter address/network, complete verification and get processed.",
+      "source": "CoinDCX crypto withdrawal FAQ"
+    }
+  },
+  {
+    "id": "q0025",
+    "text": "Can I deposit or withdraw crypto from any wallet or exchange?",
+    "metadata": {
+      "intent": "education",
+      "category": "coindcx_compliance",
+      "response": "Yes, if the wallet/exchange is verified and passes compliance. Restricted sources are blocked.",
+      "source": "CoinDCX custody FAQ"
+    }
+  },
+  {
+    "id": "q0026",
+    "text": "What are CoinDCX INR deposit and withdrawal charges?",
+    "metadata": {
+      "intent": "fees",
+      "category": "coindcx_fees",
+      "response": "INR deposits and withdrawals have no fees. KYC and BAV needed for access.",
+      "source": "CoinDCX fee structure & product tutorial"
+    }
+  },
+  {
+    "id": "q0027",
+    "text": "What are the withdrawal limits on CoinDCX?",
+    "metadata": {
+      "intent": "education",
+      "category": "coindcx_limits",
+      "response": "Non-KYC users trade up to ₹10,000. Full KYC: min ₹1,000, max ₹500,000/day, 10 transactions/day, max ₹50,000 per transaction.",
+      "source": "Republic World summary of CoinDCX limits"
+    }
+  },
+  {
+    "id": "q0028",
+    "text": "Why can’t I withdraw crypto from CoinDCX?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "coindcx_restriction",
+      "response": "Crypto withdrawals are restricted pending regulatory clarity—even though INR deposit/withdraw are fine, crypto transfers are limited for retail users.",
+      "source": "User reports on CoinDCX withdrawal restrictions"
+    }
+  },
+  {
+    "id": "q0029",
+    "text": "How do I make an on-chain crypto deposit to Bybit?",
+    "metadata": {
+      "intent": "transaction",
+      "category": "bybit_deposit",
+      "response": "Transfer from external wallet via blockchain to your Bybit account. Only use supported coins/chains and include correct memo/tag if required.",
+      "source": "Bybit on-chain crypto deposit FAQ"
+    }
+  },
+  {
+    "id": "q0030",
+    "text": "Why can't I withdraw my funds from derivatives on Bybit?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "bybit_withdraw",
+      "response": "Withdrawals are only possible from your Spot (Funding) account. Move funds from Derivatives or Earn to Spot first.",
+      "source": "Bybit crypto withdrawal FAQ"
+    }
+  },
+  {
+    "id": "q0031",
+    "text": "What are the withdrawal limits on Bybit?",
+    "metadata": {
+      "intent": "education",
+      "category": "bybit_limits",
+      "response": "Limits depend on your KYC and VIP level—range from 2 BTC to 100 BTC daily.",
+      "source": "Bybit crypto withdrawal FAQ"
+    }
+  },
+  {
+    "id": "q0032",
+    "text": "Why might my Bybit withdrawals be restricted for 24 hours?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "bybit_restriction",
+      "response": "Changing password, registered mobile, email, fund password, 2FA, or address withdrawal lock triggers a 24-hour withdrawal restriction.",
+      "source": "Bybit withdrawal FAQ"
+    }
+}
+,
+  {
+    "id": "q0033",
+    "text": "What is decentralized finance (DeFi)?",
+    "metadata": {
+      "intent": "education",
+      "category": "defi_basics",
+      "response": "DeFi is financial services on blockchain using smart contracts—lending, trading, borrowing—without banks or intermediaries.",
+      "source": "Investopedia DeFi definition"
+    }
+  },
+  {
+    "id": "q0034",
+    "text": "How do DeFi transactions work?",
+    "metadata": {
+      "intent": "education",
+      "category": "defi_transactions",
+      "response": "DeFi transactions execute via smart contracts on blockchains—peer to peer, immutable, permissionless, no need for an intermediary.",
+      "source": "Wikipedia decentralized finance"
+    }
+  },
+  {
+    "id": "q0035",
+    "text": "What is staking in crypto?",
+    "metadata": {
+      "intent": "education",
+      "category": "staking_basics",
+      "response": "Staking puts your crypto to work validating a blockchain (like PoS); in return you earn rewards for supporting network security.",
+      "source": "Coinbase staking definition"
+    }
+  },
+  {
+    "id": "q0036",
+    "text": "What is DeFi staking?",
+    "metadata": {
+      "intent": "education",
+      "category": "defi_staking",
+      "response": "DeFi staking locks your assets in smart contracts (non-custodial) to earn rewards; you keep control while contributing to protocol functions.",
+      "source": "Changelly DeFi staking"
+    }
+  },
+  {
+    "id": "q0037",
+    "text": "What is liquid staking?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquid_staking",
+      "response": "Liquid staking lets you stake assets and receive tradable tokens (like stETH/rETH) that represent your stake and continue earning rewards.",
+      "source": "CoinTracker liquid staking"
+    }
+  },
+  {
+    "id": "q0038",
+    "text": "What are the risks of DeFi staking?",
+    "metadata": {
+      "intent": "education",
+      "category": "defi_risks",
+      "response": "Risks include smart contract bugs, impermanent loss, slashing penalties, and vulnerabilities in DeFi protocols.",
+      "source": "Wikipedia decentralized finance"
+    }
+  },
+  {
+    "id": "q0039",
+    "text": "Are liquid staking tokens securities?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquid_staking_regulation",
+      "response": "The SEC clarified that liquid staking tokens are not securities, easing regulatory concerns for DeFi platforms.",
+      "source": "SEC liquid staking guidance"
+    }
+  },
+  {
+    "id": "q0040",
+    "text": "What is protocol staking?",
+    "metadata": {
+      "intent": "education",
+      "category": "protocol_staking",
+      "response": "Protocol staking is staking crypto to help validate and secure a PoS blockchain, earning rewards in new tokens or transaction fees.",
+      "source": "SEC staking statement"
+    }
+  },
+  {
+    "id": "q0041",
+    "text": "How does liquid staking enable restaking?",
+    "metadata": {
+      "intent": "education",
+      "category": "liquid_restaking",
+      "response": "Restaking involves using liquid staking tokens to stake again in other protocols for additional rewards, expanding DeFi opportunities.",
+      "source": "Academic framework on LSTs and restaking"
+    }
+  },
+  {
+    "id": "q0042",
+    "text": "How does Ethereum staking work?",
+    "metadata": {
+      "intent": "education",
+      "category": "eth_staking",
+      "response": "Staking 32 ETH registers you as a validator. Validators propose/attest blocks and earn rewards but can be penalized if they act badly.",
+      "source": "Ethereum staking process"
+    }
+  }
+,
+  {
+    "id": "q0043",
+    "text": "Why is my crypto transaction stuck or pending?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "transaction_issues",
+      "response": "Transactions can get stuck due to network congestion, low fees, wallet sync issues, or smart contract errors.",
+      "source": "Coinosh Help Center"
+    }
+  },
+  {
+    "id": "q0044",
+    "text": "What can I do if my transaction is stuck due to low fees?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "fee_related",
+      "response": "Increase the fee (gas or miner fee), use wallet 'fast' settings, or wait for network congestion to ease.",
+      "source": "Cryptovate causes & fixes"
+    }
+  },
+  {
+    "id": "q0045",
+    "text": "How do I speed up or override a stuck Bitcoin transaction?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "btc_stuck",
+      "response": "You can use Replace-By-Fee (RBF), Child Pays For Parent (CPFP), or transaction accelerators offered by mining pools.",
+      "source": "Cointelegraph stuck BTC guide"
+    }
+  },
+  {
+    "id": "q0046",
+    "text": "Why might an exchange withdrawal be stuck?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "exchange_withdrawal",
+      "response": "Common reasons: incomplete KYC, amount under minimum, policy violations, wallet maintenance, exceeded limits, wrong address, network congestion, or trusted-address protection.",
+      "source": "HollaEx 8 reasons stuck withdrawal"
+    }
+  },
+  {
+    "id": "q0047",
+    "text": "How long do stuck transactions stay pending?",
+    "metadata": {
+      "intent": "education",
+      "category": "transaction_timing",
+      "response": "It varies—weeks in some cases. Transactions may eventually expire and return to your wallet if they remain unconfirmed.",
+      "source": "Quppy unconfirmed transactions FAQ"
+    }
+  },
+  {
+    "id": "q0048",
+    "text": "How do I “speed up” a stuck MetaMask transaction?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "wallet_specific",
+      "response": "Use MetaMask’s 'speed up' feature to resend with a higher gas price, or 'reset account' to clear stuck history without losing funds.",
+      "source": "Medium guide on MetaMask"
+    }
+  },
+  {
+    "id": "q0049",
+    "text": "Can sending 0 ETH with same nonce cancel a stuck Ethereum transaction?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "wallet_hacks",
+      "response": "Yes. Sending to yourself 0 ETH with the same nonce and higher gas can override the stuck transaction.",
+      "source": "Reddit Etherscan tutorial"
+    }
+  },
+  {
+    "id": "q0050",
+    "text": "What do Redditors suggest for a stuck polygon transaction?",
+    "metadata": {
+      "intent": "troubleshooting",
+      "category": "polygon_stuck",
+      "response": "Enable custom nonce, get the stuck transaction’s nonce from explorer, then send 0 MATIC to yourself with same nonce.",
+      "source": "Reddit Polygon pending tx"
+    }
+  },
+  {
+    "id": "q0051",
+    "text": "What if a transaction seems stuck in the mempool too long?",
+    "metadata": {
+      "intent": "education",
+      "category": "mempool_behavior",
+      "response": "If fees are too low, transactions can remain in the mempool indefinitely. Most wallets will return funds after expiry; you’ll have to resend at a higher fee.",
+      "source": "Cointelegraph mempool behavior"
+    }
+  },
+
+
+
+  {
+    "id": "q0052",
+    "text": "Which blockchain networks have near-zero or no transaction fees?",
+    "metadata": {
+      "intent": "education",
+      "category": "low_fee_networks",
+      "response": "Nano offers feeless, near-instant transactions via a block-lattice structure. IOTA uses a DAG (Tangle) to enable feeless transfers.",
+      "source": "GasFees.org low-fee blockchains & IOTA functionality"
+    }
+  },
+  {
+    "id": "q0053",
+    "text": "Why are Nano and IOTA feeless?",
+    "metadata": {
+      "intent": "education",
+      "category": "blockchain_mechanics",
+      "response": "Nano avoids miners by giving each account its own blockchain and uses delegated PoS voting; IOTA’s DAG lets each new transaction approve two others—no miner fees needed.",
+      "source": "GasFees.org & IOTA DAG explanation"
+    }
+  },
+  {
+    "id": "q0054",
+    "text": "What are the cheapest blockchain networks currently?",
+    "metadata": {
+      "intent": "education",
+      "category": "low_fee_networks",
+      "response": "Solana (~$0.00025), Algorand (~0.001 ALGO), Stellar (~$0.00001 XLM), Bitgert (near-zero), plus Layer-2s like Base (~$0.001) and Arbitrum (~$0.03).",
+      "source": "GasFees.org & valuewalk.com on low-fee options"
+    }
+  },
+  {
+    "id": "q0055",
+    "text": "How cheap are Ethereum Layer-2 networks like Base and Arbitrum?",
+    "metadata": {
+      "intent": "education",
+      "category": "layer2_fees",
+      "response": "Base charges around $0.001 per transaction using Optimistic Rollups; Arbitrum’s fee is about $0.03, both much cheaper than Ethereum mainnet.",
+      "source": "ValueWalk article on Base and Arbitrum"
+    }
+  },
+  {
+    "id": "q0056",
+    "text": "What about other cheap EVM-compatible chains?",
+    "metadata": {
+      "intent": "education",
+      "category": "low_fee_networks",
+      "response": "BNB Chain users pay just a few cents (around $0.10–$0.50), Polygon less than $0.01, Avalanche $0.10–$0.50, and Solana around $0.00025.",
+      "source": "cryptoclass.link & other fee comparison data"
+    }
+  },
+  {
+    "id": "q0057",
+    "text": "Any networks designed especially for low gas use, like for payments?",
+    "metadata": {
+      "intent": "education",
+      "category": "payment_networks",
+      "response": "Stellar excels in cross-border payments with fees around $0.00001. Harmony and Near are also cheap Layer-1 options, with Harmony ~0.0001–0.002 USD per tx.",
+      "source": "bingscripto data & GasFees.org"
+    }
+  },
+  {
+    "id": "q0058",
+    "text": "Are there gasless solutions using meta-transactions or relayers?",
+    "metadata": {
+      "intent": "service",
+      "category": "gasless_solutions",
+      "response": "Yes—Kinetex offers gasless swaps using relayers and gas escrow; Coinbase Wallet enables gas-free USDC transfers on Polygon via EIP-4337 account abstraction.",
+      "source": "Kinetex docs & Reddit discussion on gas-free USDC"
+    }
+  },
+  {
+    "id": "q0059",
+    "text": "Can some platforms sponsor or pay gas for users?",
+    "metadata": {
+      "intent": "service",
+      "category": "gasless_solutions",
+      "response": "Arcana Network sponsors gas fees for users to improve dApp usability, so interactions feel gasless from the user's perspective.",
+      "source": "Reddit discussion on Arcana Network gasless feature"
+    }
+  }
+
+
+]
