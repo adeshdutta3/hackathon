@@ -1,0 +1,92 @@
+[2025-08-30 20:04:38,836] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Hey","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:04:39,865] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:04:50,059] ERROR [app:query.py:51] - Error processing general query: string indices must be integers, not 'str'
+[2025-08-30 20:04:50,059] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 500 | Time: 11223.62ms
+[2025-08-30 20:06:53,446] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"hey","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:06:54,508] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:06:56,698] ERROR [app:query.py:54] - Unexpected response format: {"answer": " Hello! I can assist you with any questions related to Decentralized Finance (DeFi). How may I help you today?", "action": false}
+[2025-08-30 20:06:56,698] ERROR [app:query.py:57] - Error processing general query: 500: Unexpected response format from general query chain
+[2025-08-30 20:06:56,698] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 500 | Time: 3254.58ms
+[2025-08-30 20:09:47,768] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Hey","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:09:48,848] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:09:51,590] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 3822.08ms
+[2025-08-30 20:10:08,542] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"spo how its going","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:10:09,793] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1252.84ms
+[2025-08-30 20:10:26,248] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"okay so update me about something","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:10:36,432] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 10183.50ms
+[2025-08-30 20:10:49,287] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"okay system pe system","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:10:50,620] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1339.20ms
+[2025-08-30 20:11:17,461] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"okay so tell me about some transaction which you can use","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:11:33,085] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 15623.53ms
+[2025-08-30 20:11:52,702] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"send 1eth to someone","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:11:53,332] ERROR [app:query.py:73] - Error running action chain: object dict can't be used in 'await' expression
+[2025-08-30 20:11:53,332] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 500 | Time: 630.28ms
+[2025-08-30 20:12:50,180] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:12:51,442] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:12:52,024] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1844.06ms
+[2025-08-30 20:15:32,663] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"d960ad26-0903-4ae4-828d-534f7967e3bc"}
+[2025-08-30 20:15:33,812] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:15:34,314] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1650.38ms
+[2025-08-30 20:17:03,080] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:17:04,296] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:17:04,775] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1695.69ms
+[2025-08-30 20:19:46,891] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:19:47,379] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 490.08ms
+[2025-08-30 20:24:10,762] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:24:11,871] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:24:12,515] WARNING [app:query.py:80] - Empty answer received from run_action_chain
+[2025-08-30 20:24:12,515] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1752.52ms
+[2025-08-30 20:24:40,458] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"[2025-08-30 20:24:12,515] WARNING [app:query.py:80] - Empty answer received from run_action_chain","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:25:56,795] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:25:57,935] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:25:58,517] ERROR [app:query.py:84] - Error running action chain: name 'logger' is not defined
+[2025-08-30 20:25:58,519] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 500 | Time: 1723.83ms
+[2025-08-30 20:27:01,415] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:27:02,391] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:27:03,010] ERROR [app:query.py:84] - Error running action chain: object dict can't be used in 'await' expression
+[2025-08-30 20:27:03,010] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 500 | Time: 1596.65ms
+[2025-08-30 20:28:11,819] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:28:12,859] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:28:13,265] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1445.98ms
+[2025-08-30 20:30:17,705] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Send 1eth to adesh the ass","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:30:18,764] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:30:19,211] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1508.48ms
+[2025-08-30 20:30:54,061] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"dsdkbj","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:30:55,496] WARNING [app:intent_chain.py:81] - Invalid intent classification: clarification (since the user did not ask a question or provide any context for an action)
+[2025-08-30 20:31:48,977] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Hello bitch","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"1759a7ed-8438-4888-bf67-c03cf1e4e610"}
+[2025-08-30 20:31:50,074] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 20:31:51,661] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 2684.19ms
+[2025-08-30 20:32:24,643] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Swap usdt to eth","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"17b9d669-23dd-4606-8a95-ae80461836a7"}
+[2025-08-30 20:32:25,323] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 680.18ms
+[2025-08-30 20:46:57,597] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Hello","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"a7f42073-14f6-47b4-919f-912287b7f6ee"}
+[2025-08-30 20:47:04,312] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 6715.51ms
+[2025-08-30 21:11:03,294] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"What are top 3 apy pools?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:11:04,472] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 21:12:08,443] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"What are top 3 apy pools?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:12:09,664] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 21:12:12,297] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 3854.22ms
+[2025-08-30 21:38:33,647] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"hello","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:38:40,330] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 6682.72ms
+[2025-08-30 21:38:46,260] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Who are you?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:38:49,054] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 2793.90ms
+[2025-08-30 21:38:59,523] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"what LLM are you?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:39:02,925] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 3401.66ms
+[2025-08-30 21:39:11,034] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Are you Mistral?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:39:13,480] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 2446.08ms
+[2025-08-30 21:39:43,468] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Fetch me the data of top perforing appy","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:39:44,087] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 619.76ms
+[2025-08-30 21:41:09,676] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"Fetch me the data of top perforing appy","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:41:10,946] INFO [app:model_selector.py:40] - Loaded intent model: mistral:7b (Mistral-7B via Ollama)
+[2025-08-30 21:41:13,329] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 3653.23ms
+[2025-08-30 21:41:25,604] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"hey","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:41:27,740] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 2135.95ms
+[2025-08-30 21:41:42,672] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"What is APY?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"99eab161-3167-492a-915e-af870a265876"}
+[2025-08-30 21:41:47,090] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 4417.99ms
+[2025-08-30 21:42:16,796] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"I want to invest in AAVe, can you tell me risks?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"0b24e78a-5b7c-45ef-a2bb-4eec3a217539"}
+[2025-08-30 21:42:30,687] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 13890.67ms
+[2025-08-30 21:42:52,646] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"can you explain the security risks a bit more?","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"0b24e78a-5b7c-45ef-a2bb-4eec3a217539"}
+[2025-08-30 21:43:16,172] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 23526.36ms
+[2025-08-30 21:44:06,429] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"That are major concern I guess","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"0b24e78a-5b7c-45ef-a2bb-4eec3a217539"}
+[2025-08-30 21:44:25,138] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 18709.54ms
+[2025-08-30 21:44:42,156] INFO [app:log_requests.py:15] - [IN] POST /query/ | Query: None | Body: {"query":"/bye","user_id":"user_320drLEcj9Oh7g4eWwTJUBqzsmo","session_id":"0b24e78a-5b7c-45ef-a2bb-4eec3a217539"}
+[2025-08-30 21:44:43,562] INFO [app:log_requests.py:24] - [OUT] POST /query/ | Status: 200 | Time: 1406.39ms

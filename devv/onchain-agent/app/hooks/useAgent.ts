@@ -49,6 +49,7 @@ async function messageAgent(userMessage: string): Promise<string | null> {
 export function useAgent() {
   const [messages, setMessages] = useState<{ text: string; sender: "user" | "agent" }[]>([]);
   const [isThinking, setIsThinking] = useState(false);
+  const [paymentStatus, setPaymentStatus] = useState<"pending" | "confirmed" | "failed">("pending");
 
   /**
    * Sends a user message, updates local state, and retrieves the agent's response.
@@ -71,4 +72,46 @@ export function useAgent() {
   };
 
   return { messages, sendMessage, isThinking };
+}
+
+
+const handlePaymentRequired = async () => {
+  try {
+    // Send payment request to backend
+    const response = await fetch("/api/payment/initiate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ 
+        messageCount: messages.length + 1,
+        userId: "user_123" // Replace with actual user ID
+      }),
+    });
+
+    if (response.status === 402) {
+      // Payment required - show payment modal
+      setPaymentStatus("pending");
+      // You'll implement a payment modal here
+    } else if (response.ok) {
+      const data = await response.json();
+      if (data.paymentConfirmed) {
+        setPaymentStatus("confirmed");
+        // Continue with the message
+        const responseMessage = await messageAgent(input);
+        if (responseMessage) {
+          setMessages(prev => [...prev, { text: responseMessage, sender: "agent" }]);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Payment error:", error);
+    setPaymentStatus("failed");
+  };
+
+  return { 
+    messages, 
+    sendMessage, 
+    isThinking, 
+    paymentStatus,
+    setPaymentStatus 
+  };
 }

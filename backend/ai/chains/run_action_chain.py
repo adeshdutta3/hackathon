@@ -1,10 +1,10 @@
 from backend.logging_setup import logger
 
 
-async def run_action_chain(query: str, user_id: str) -> dict:
+async def run_action_chain(query: str) -> dict:
     """Simulate action chain processing."""
     # Log the input for tracing
-    logger.debug(f"run_action_chain called with query: {query} and user_id: {user_id}")
+    logger.debug(f"run_action_chain called with query: {query} and user_id: adesh")
     
     # Simulate generating an answer (replace with actual logic)
     answer = query  # Example output

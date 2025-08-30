@@ -173,6 +173,7 @@ export default function ChatbotPage(): JSX.Element {
       });
       const aiData = await res.json();
       const botText = aiData.answer || aiData.clarification_question || 'No answer.';
+      console.log(aiData);
 
       setMessages(prev => {
         const copy = [...prev];

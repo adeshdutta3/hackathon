@@ -15,7 +15,7 @@ _intent_prompt = ChatPromptTemplate.from_template(
 - general_query → informational/educational (e.g., "What is staking?" or Greeting message like "Hello", "Hi", "Good morning")
 - action_intent → user wants to perform an action (e.g., "Send 5 USDC", "Check my balance", "What is my portfolio value?")
 - clarification → query is vague or incomplete
-- apy-query → user wants to query the defi data (e.g., "What is the price of ETH?", "What is the APY of the USDC?", "What are Top APY Pools?")
+- apy-query → user wants to query the defi data (e.g., "What is the price of ETH?", "What is the APY of the USDC?", "What are Top APY Pools?", "Fetch me the data of the top 3 APY pools")
 
 User: {query}
 

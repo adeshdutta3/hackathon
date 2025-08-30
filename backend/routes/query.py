@@ -64,7 +64,7 @@ async def handle_query(
     elif intent == "action_intent":
         try:
             # 🔹 now async
-            data = await run_action_chain(query_text, user_id)
+            data = await run_action_chain(query_text)
             
             # Log the raw response from run_action_chain for debugging
             logger.debug(f"Action Intent Response: {data}")
