@@ -162,28 +162,45 @@ export default function ChatbotPage(): JSX.Element {
     });
     if (!saveUser.ok) console.warn("Failed to persist user message");
 
-      const res = await fetch('http://localhost:8000/query/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: text,
-          user_id: user.user?.id || 'guest_user',
-          session_id: chatId,
-        }),
-      });
-      const aiData = await res.json();
-      const botText = aiData.answer || aiData.clarification_question || 'No answer.';
+    const res = await fetch("http://localhost:8000/query/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: text,
+        user_id: user.user?.id || "guest_user",
+        session_id: chatId,
+      }),
+    });
 
-      setMessages(prev => {
-        const copy = [...prev];
-        for (let i = copy.length - 1; i >= 0; i--) {
-          if (copy[i].role === 'bot' && copy[i].text === '') {
-            copy[i] = { role: 'bot', text: botText };
-            return copy;
-          }
-        }
-        return [...copy, { role: 'bot', text: botText }];
+    const aiData = await res.json();
+
+    let botText: string;
+
+    if (aiData.action === true) {
+      // 🔹 Fetch from your Next.js agent backend
+      const agentRes = await fetch("http://localhost:3001/api/agent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userMessage: text }),
       });
+      const agentData = await agentRes.json();
+      botText = agentData.response || agentData.error || "No agent reply.";
+    } else {
+      // 🔹 Default fallback to aiData.answer
+      botText =
+        aiData.answer || aiData.clarification_question || "No answer.";
+    }
+
+    setMessages((prev) => {
+      const copy = [...prev];
+      for (let i = copy.length - 1; i >= 0; i--) {
+        if (copy[i].role === "bot" && copy[i].text === "") {
+          copy[i] = { role: "bot", text: botText };
+          return copy;
+        }
+      }
+      return [...copy, { role: "bot", text: botText }];
+    });
 
     const saveBot = await fetch(`/api/chats/${chatId}/messages`, {
       method: "POST",
@@ -199,6 +216,7 @@ export default function ChatbotPage(): JSX.Element {
     ]);
   }
 };
+
 
    useEffect(() => {
     localStorage.setItem("chatCount", chatCount.toString());

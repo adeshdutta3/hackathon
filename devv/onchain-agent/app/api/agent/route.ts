@@ -1,0 +1,92 @@
+import { AgentRequest, AgentResponse } from "@/app/types/api";
+import { NextResponse } from "next/server";
+import { createAgent } from "./create-agent";
+
+export async function POST(
+  req: Request & { json: () => Promise<AgentRequest> },
+): Promise<NextResponse<AgentResponse>> {
+  try {
+    // 1️. Extract user message from the request body
+    const { userMessage } = await req.json();
+
+    // 2. Get the agent
+    const agent = await createAgent();
+
+    // 3.Start streaming the agent's response
+    const stream = await agent.stream(
+      { messages: [{ content: userMessage, role: "user" }] },
+      { configurable: { thread_id: "AgentKit Discussion" } },
+    );
+
+    // 4️. Process the streamed response chunks into a single message
+    let agentResponse = "";
+    for await (const chunk of stream) {
+      if ("agent" in chunk) {
+        agentResponse += chunk.agent.messages[0].content;
+      }
+    }
+
+    // 5️. Return the final response with CORS headers
+    return NextResponse.json(
+      { response: agentResponse },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      },
+    );
+  } catch (error) {
+    console.error("Error processing request:", error);
+
+    if (error && typeof error === "object" && "error" in error) {
+      const groqError = error as { error?: { code?: string } };
+      if (groqError.error?.code === "tool_use_failed") {
+        return NextResponse.json(
+          {
+            error:
+              "I'm having trouble executing blockchain actions right now due to function calling limitations. Please try asking me a general question or try again later. If you need to perform blockchain actions, you may need to use a different model or service.",
+          },
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Allow-Methods": "POST, OPTIONS",
+              "Access-Control-Allow-Headers": "Content-Type",
+            },
+          },
+        );
+      }
+    }
+
+    return NextResponse.json(
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "I'm sorry, I encountered an issue processing your message. Please try again later.",
+      },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      },
+    );
+  }
+}
+
+// Handle preflight CORS requests
+export async function OPTIONS() {
+  return NextResponse.json(
+    {},
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+    },
+  );
+}
