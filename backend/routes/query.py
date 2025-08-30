@@ -12,6 +12,7 @@ from backend.ai.chains.intent_chain import classify_intent
 from backend.ai.chains.general_query_chain import general_query_chain
 from backend.logging_setup import logger
 from backend.ai.chains.run_action_chain import run_action_chain
+from backend.ai.chains.apy_query_chain import apy_query_chain
 
 router = APIRouter()
 limiter = Limiter(key_func=get_remote_address)
@@ -43,8 +44,16 @@ async def handle_query(
 
     if intent == "general_query":
         try:
-            answer = general_query_chain(query_text) 
-            return QueryResponse(answer=answer)
+            data = general_query_chain(query_text)
+            
+            # Ensure that data is a dictionary with answer and action
+            if isinstance(data, dict) and "answer" in data and "action" in data:
+                answer = data["answer"]
+                action = data["action"]
+                return QueryResponse(answer=answer, action=action)
+            else:
+                logger.error(f"Unexpected response format: {data}")
+                raise HTTPException(status_code=500, detail="Unexpected response format from general query chain")
         except Exception as e:
             logger.error(f"Error processing general query: {e}")
             raise HTTPException(status_code=500, detail="Error processing query")
@@ -55,8 +64,27 @@ async def handle_query(
     elif intent == "action_intent":
         try:
             # 🔹 now async
-            answer = await run_action_chain(query_text, user_id)
-            return QueryResponse(answer=answer)
+            data = await run_action_chain(query_text, user_id)
+            
+            # Log the raw response from run_action_chain for debugging
+            logger.debug(f"Action Intent Response: {data}")
+            
+            # Ensure the correct format for answer and action
+            answer = data.get("answer", "")
+            action = data.get("action", False)  # Default to False if action isn't found
+            
+            # Log final answer and action to be returned
+            logger.debug(f"Returning answer: {answer}, action: {action}")
+            
+            # Check if the answer is empty, just to ensure it's not blank
+            if not answer:  # If answer is empty, log it as a warning
+                logger.warning("Empty answer received from run_action_chain")
+            
+            return QueryResponse(answer=answer, action=action)
         except Exception as e:
             logger.error(f"Error running action chain: {e}")
             raise HTTPException(status_code=500, detail="Error executing blockchain action")
+
+    else:
+        answer = apy_query_chain()
+        return QueryResponse(answer=answer, action=False)

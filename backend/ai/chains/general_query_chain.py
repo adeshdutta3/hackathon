@@ -4,7 +4,6 @@ from backend.utils.model_selector import tiny_model, mini_model
 from langsmith import traceable
 
 
-
 @traceable(name="Tiny Model Response")
 def gpt_tiny_response(query: str, context: str) -> str:
     """Generate rephrased response using the tiny model."""
@@ -32,7 +31,7 @@ def gpt_tiny_response(query: str, context: str) -> str:
 
 @traceable(name="Mini Model Response")
 def gpt_mini_response(query: str) -> str:
-    """Placeholder for GPT mini response generation."""
+    """Generate response using the mini model."""
     model = mini_model()
     prompt = (
         "You are a DeFi assistant. "
@@ -52,22 +51,25 @@ def gpt_mini_response(query: str) -> str:
         return "I can only answer DeFi-related questions."
 
 
-def general_query_chain(query: str) -> str:
+def general_query_chain(query: str) -> dict:
     """Process a general query and return an answer."""
     try:
-        res = query_db(query)   # returns a dict
+        res = query_db(query)  # returns a dict
         result = res["answer"]
         confidence = res["confidence"]
         print(res)
 
+        # If confidence is high enough, return the result directly
         if confidence > 0.7:
-            return result
+            return {"answer": result, "action": False}
+        
+        # If confidence is moderate, use GPT tiny model to rephrase
         elif confidence > 0.6:
-            # USE GPT tiny to rephrase with uncertainty
-            return gpt_tiny_response(query, result)
+            return {"answer": gpt_tiny_response(query, result), "action": False}
+        
+        # If confidence is low, use GPT mini model for a more generalized response
         else:
-            # USE GPT mini to give generalized answer
-            return gpt_mini_response(query)
+            return {"answer": gpt_mini_response(query), "action": False}
     except Exception as e:
-        logger.log(40, f"Replying directly using model: {e}")
-        return gpt_mini_response(query)
+        logger.error(f"Error processing general query: {e}")
+        return {"answer": gpt_mini_response(query), "action": False}
