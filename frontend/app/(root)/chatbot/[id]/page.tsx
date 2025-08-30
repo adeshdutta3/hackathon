@@ -269,7 +269,13 @@ async function createChat() {
                 <PlusCircle className="mt-1 h-4 w-4" />
               </div>
             </button>
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+            <Button
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+              onClick={() => {
+                // Redirect user to the x402-protected endpoint
+                router.replace('/protected')
+              }}
+            >
               Upgrade
             </Button>
           </DialogFooter>

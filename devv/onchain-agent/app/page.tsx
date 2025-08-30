@@ -2,13 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useAgent } from "./hooks/useAgent";
-import PaymentModal from "./components/PaymentModal";
 import ReactMarkdown from "react-markdown";
-
-export default function Home() {
-  const [input, setInput] = useState("");
-  const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const { messages, sendMessage, isThinking, paymentStatus } = useAgent();
 
 /**
  * Home page for the AgentKit Quickstart
@@ -34,26 +28,9 @@ export default function Home() {
 
   const onSendMessage = async () => {
     if (!input.trim() || isThinking) return;
-    
-    // Check if payment is required
-    if (messages.length >= 9 && paymentStatus !== "confirmed") {
-      setShowPaymentModal(true);
-      return;
-    }
-    
     const message = input;
     setInput("");
     await sendMessage(message);
-  };
-
-  const handlePaymentConfirmed = () => {
-    setShowPaymentModal(false);
-    // Continue with the pending message
-    if (input.trim()) {
-      const message = input;
-      setInput("");
-      sendMessage(message);
-    }
   };
 
   return (
@@ -122,11 +99,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <PaymentModal 
-        isOpen={showPaymentModal} 
-        onClose={() => setShowPaymentModal(false)} 
-        onPaymentConfirmed={handlePaymentConfirmed} 
-      />
     </div>
   );
 }
