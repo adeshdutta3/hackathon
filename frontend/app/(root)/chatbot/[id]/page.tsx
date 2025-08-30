@@ -138,29 +138,29 @@ export default function ChatbotPage(): JSX.Element {
   }
 
   const handleSend = async () => {
-    if (userMsgCount >= 10) {
-      setShowLimitDialog(true);
-      return;
-    }
-    const text = input.trim();
-    if (!text) return;
-    if (!chatId) {
-      console.error('No chat id available.');
-      return;
-    }
+  if (userMsgCount >= 10) {
+    setShowLimitDialog(true);
+    return;
+  }
+  const text = input.trim();
+  if (!text) return;
+  if (!chatId) {
+    console.error("No chat id available.");
+    return;
+  }
 
-    setMessages(prev => [...prev, { role: 'user', text }]);
-    setInput('');
-    if (textareaRef.current) textareaRef.current.style.height = 'auto';
-    setMessages(prev => [...prev, { role: 'bot', text: '' }]);
+  setMessages((prev) => [...prev, { role: "user", text }]);
+  setInput("");
+  if (textareaRef.current) textareaRef.current.style.height = "auto";
+  setMessages((prev) => [...prev, { role: "bot", text: "" }]);
 
-    try {
-      const saveUser = await fetch(`/api/chats/${chatId}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: text, role: 'user' }),
-      });
-      if (!saveUser.ok) console.warn('Failed to persist user message');
+  try {
+    const saveUser = await fetch(`/api/chats/${chatId}/messages`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: text, role: "user" }),
+    });
+    if (!saveUser.ok) console.warn("Failed to persist user message");
 
       const res = await fetch('http://localhost:8000/query/', {
         method: 'POST',
@@ -173,7 +173,6 @@ export default function ChatbotPage(): JSX.Element {
       });
       const aiData = await res.json();
       const botText = aiData.answer || aiData.clarification_question || 'No answer.';
-      console.log(aiData);
 
       setMessages(prev => {
         const copy = [...prev];
@@ -186,20 +185,21 @@ export default function ChatbotPage(): JSX.Element {
         return [...copy, { role: 'bot', text: botText }];
       });
 
-      const saveBot = await fetch(`/api/chats/${chatId}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: botText, role: 'assistant' }),
-      });
-      if (!saveBot.ok) console.warn('Failed to persist bot message');
-    } catch (error) {
-      console.error(error);
-      setMessages(prev => [
-        ...prev.slice(0, -1),
-        { role: 'bot', text: '⚠️ Error contacting server.' },
-      ]);
-    }
-  };
+    const saveBot = await fetch(`/api/chats/${chatId}/messages`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: botText, role: "assistant" }),
+    });
+    if (!saveBot.ok) console.warn("Failed to persist bot message");
+  } catch (error) {
+    console.error(error);
+    setMessages((prev) => [
+      ...prev.slice(0, -1),
+      { role: "bot", text: "⚠️ Error contacting server." },
+    ]);
+  }
+};
+
    useEffect(() => {
     localStorage.setItem("chatCount", chatCount.toString());
   }, [chatCount]);
